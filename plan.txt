@@ -1,0 +1,16 @@
+english_thesaurus/
+│
+├── app.py
+├── thesaurus.py
+├── voice.py  
+│
+├── data/
+│   ├── favorites.json
+│   └── history.json
+│
+├── templates/
+│   └── index.html
+│
+└── static/
+    ├── style.css
+    └── script.js

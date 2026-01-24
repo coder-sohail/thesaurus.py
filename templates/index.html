@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The English Thesaurus</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/favicon.ico">
+    <link rel="manifest" href="/static/manifest.json">
+</head>
+<body>
+
+<div id="splash">
+  <div class="splash-content">
+    <h1>THESAURUS.py</h1>
+    <p>Your intelligent English companion</p>
+  </div>
+</div>
+
+<h1>THESAURUS.py</h1>
+
+<p style="text-align:center;opacity:.6">Your intelligent English companion</p>
+
+<div class="container">
+
+    <input class="search-input" id="word" placeholder="Search a word...">
+
+    <div class="button-row">
+    <button class="primary" onclick="searchWord()">Search</button>
+    <button onclick="addToFav()">🧡 Favorite</button>
+    <button onclick="voiceInput()">🎤</button>
+    <button onclick="talkBack()">🔊</button>
+    <button onclick="stopTalk()">⏹</button>
+</div>
+
+
+    <div class="button-row">
+        <button onclick="openFavorites()">🧡 Favorites</button>
+        <button onclick="showWordOfDay()">📆 WOTD</button>
+        <button onclick="openHistory()">📜 History</button>
+        <button onclick="openQuiz()">🎯 Quiz</button>
+        <button onclick="openSettings()">⚙️ Settings</button>
+    </div>
+
+    <div id="result"></div>
+</div>
+
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span id="modal-title"></span>
+      <span class="close" onclick="closeModal()">✖</span>
+    </div>
+    <div id="modal-content"></div>
+  </div>
+</div>
+<script src="/static/script.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/static/sw.js");
+}
+</script>
+
+</body>
+
+<footer style="text-align:center;opacity:.5;margin:20px;">THESAURUS.py © 2026</footer>
+
+</html>

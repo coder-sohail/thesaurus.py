@@ -1,0 +1,179 @@
+:root {
+    --bg: #0f172a;
+    --card: #020617;
+    --text: #e5e7eb;
+    --accent: #60a5fa;
+    --soft: #1e293b;
+}
+
+body.light {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --accent: #3b82f6;
+    --soft: #e5e7eb;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--accent);
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: var(--card);
+    color: var(--text);
+    font-size: 16px;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: var(--soft);
+    color: var(--text);
+    cursor: pointer;
+}
+
+button.primary {
+    background: var(--accent);
+    color: white;
+}
+
+#result {
+    background: var(--card);
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background: var(--card);
+    width: 80%;
+    max-width: 500px;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.close { cursor: pointer; }
+
+/* Animations */
+.modal {
+    animation: fadeIn .25s ease forwards;
+}
+
+.modal-box {
+    animation: popUp .25s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+@keyframes popUp {
+    from { transform: scale(.85); opacity: 0 }
+    to { transform: scale(1); opacity: 1 }
+}
+
+button {
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(0,0,0,.15);
+}
+
+#result {
+    animation: fadeIn .2s ease;
+}
+
+#splash {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.splash-content {
+    text-align: center;
+    animation: splashScale 1.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.splash-content h1 {
+    font-size: 3rem;
+    color: #e5e7eb;
+    animation: titleSlide 1.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.splash-content p {
+    opacity: 0;
+    animation: subtitleFade 1s ease forwards;
+    animation-delay: .9s;
+}
+
+@keyframes splashScale {
+    0% { transform: scale(.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes titleSlide {
+    0% { transform: translateY(30px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes subtitleFade {
+    to { opacity: .7; }
+}
+
+@keyframes splashOut {
+    to { opacity: 0; transform: scale(1.05); }
+}
+
